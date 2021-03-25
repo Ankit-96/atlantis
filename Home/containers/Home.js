@@ -64,6 +64,7 @@ class Home extends Component {
             style: {height: 40},
             labelStyle: {fontSize: 7.8},
             upperCaseLabel: false,
+            scrollEnabled: true,
             indicatorStyle: {backgroundColor: '#E38534'},
           }}>
           <Tab.Screen style={{}} name="BestOffers" component={BestOffers} />
