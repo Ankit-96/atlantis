@@ -1,0 +1,10 @@
+gr: {
+  justify-content: flex-start;
+  border-radius: 5;
+  border-width: 1;
+  padding: 10;
+  height: 150;
+  /* width: Dimensions.get('window') .width - 40; */
+  margin: 10;
+  background-color: '#fff';
+}
