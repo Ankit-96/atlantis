@@ -15,14 +15,14 @@ const data = [
 const width = Dimensions.get('window').width;
 
 class Popular extends Component {
-  _renderItem = (item, index) => {
+  _renderItem = (item) => {
     return (
       <View style={styles.gridView}>
         <Button
           style={styles.button}
           compact={true}
           uppercase={false}
-          labelStyle={{color: 'orange', fontWeight: '400'}}
+          labelStyle={{color: '#E38534', fontWeight: '400'}}
           mode="outlined"
           onPress={() => alert('Pressed')}>
           Select

@@ -18,18 +18,25 @@ const data = [
     desc:
       'Enjoy TRULY unlimited Local, STD & Roaming calls on any network, 1 GB data per day, 100 National SMS/day for 28 days',
   },
+  {
+    value: '599',
+    validity: 'Validity: 365 Days',
+    pack: 'Data: 1.5GB/Day',
+    desc:
+      'Enjoy TRULY unlimited Local, STD & Roaming calls on any network, 1 GB data per day, 100 National SMS/day for 28 days',
+  },
 ];
 const width = Dimensions.get('window').width;
 
 class SpecialRecharge extends Component {
-  _renderItem = (item, index) => {
+  _renderItem = (item) => {
     return (
       <View style={styles.gridView}>
         <Button
           style={styles.button}
           compact={true}
           uppercase={false}
-          labelStyle={{color: 'orange', fontWeight: '400'}}
+          labelStyle={{color: '#E38534', fontWeight: '400'}}
           mode="outlined"
           onPress={() => alert('Pressed')}>
           Select

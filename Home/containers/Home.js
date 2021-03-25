@@ -36,7 +36,7 @@ class Home extends Component {
           />
           <View style={{marginTop: 30}}>
             <Search
-              backgroundColor={{backgroundColor: 'orange'}}
+              backgroundColor={{backgroundColor: '#fff'}}
               inputHeight={40}
               placeholder={'Search Plan Amount, Talktime'}
               titleCancelColor={'#000'}

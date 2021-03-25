@@ -16,26 +16,18 @@ const data = [
     desc:
       'Enjoy TRULY unlimited Local, STD & Roaming calls on any network, 1 GB data per day, 100 National SMS/day for 28 days',
   },
-  {
-    value: '599',
-    validity: 'Validity: 365 Days',
-    desc:
-      'Enjoy TRULY unlimited Local, STD & Roaming calls on any network, 1 GB data per day, 100 National SMS/day for 28 days',
-  },
 ];
 const width = Dimensions.get('window').width;
 
 class BestOffers extends Component {
-  _renderItem = (item, index) => {
+  _renderItem = (item) => {
     return (
-      <View
-        contentContainerStyle={{justifyContent: 'flex-start'}}
-        style={styles.gridView}>
+      <View style={styles.gridView}>
         <Button
           style={styles.button}
           compact={true}
           uppercase={false}
-          labelStyle={{color: 'orange', fontWeight: '400'}}
+          labelStyle={{color: '#E38534', fontWeight: '400'}}
           mode="outlined"
           onPress={() => alert('Button Pressed')}>
           Select
@@ -77,7 +69,7 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   validityContainer: {
-    marginTop: 45,
+    marginTop: 20,
     fontSize: 12,
     color: '#697073',
   },
