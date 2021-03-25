@@ -12,9 +12,10 @@ const data = [
       'Enjoy TRULY unlimited Local, STD & Roaming calls on any network, 1 GB data per day, 100 National SMS/day for 28 days',
   },
 ];
+const width = Dimensions.get('window').width;
 
 class Popular extends Component {
-  _renderItem(item) {
+  _renderItem = (item, index) => {
     return (
       <View style={styles.gridView}>
         <Button
@@ -40,7 +41,7 @@ class Popular extends Component {
         <Text style={styles.descContainer}>{item.desc}</Text>
       </View>
     );
-  }
+  };
 
   render() {
     return (
@@ -48,6 +49,9 @@ class Popular extends Component {
         style={{backgroundColor: '#fff'}}
         itemDimension={130}
         horizontal={true}
+        ItemSeparatorComponent={
+          <View style={{height: 1, width: '100%', backgroundColor: '#000'}} />
+        }
         renderItem={(item) => this._renderItem(item.item)}
         data={data}
       />
@@ -61,8 +65,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 10,
     height: 150,
-    width: Dimensions.get('window').width - 40,
-    margin: 10,
+    width: width - 40,
     backgroundColor: '#fff',
   },
   valueContainer: {
@@ -82,10 +85,10 @@ const styles = StyleSheet.create({
     color: '#a5a9ab',
   },
   button: {
-    borderColor: 'orange',
+    borderColor: '#E38534',
     width: 95,
+    marginLeft: width - 160,
     position: 'absolute',
-    marginLeft: 170,
     marginTop: 5,
     borderRadius: 20,
   },

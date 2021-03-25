@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Dimensions, StyleSheet} from 'react-native';
+import {View, Text, Dimensions, StyleSheet, ScrollView} from 'react-native';
 import {Button} from 'react-native-paper';
 import {FlatGrid} from 'react-native-super-grid';
 
@@ -11,33 +11,41 @@ const data = [
       'Enjoy TRULY unlimited Local, STD & Roaming calls on any network, 1 GB data per day, 100 National SMS/day for 28 days',
   },
   {
-    value: '399',
+    value: '499',
+    validity: 'Validity: 365 Days',
+    desc:
+      'Enjoy TRULY unlimited Local, STD & Roaming calls on any network, 1 GB data per day, 100 National SMS/day for 28 days',
+  },
+  {
+    value: '599',
     validity: 'Validity: 365 Days',
     desc:
       'Enjoy TRULY unlimited Local, STD & Roaming calls on any network, 1 GB data per day, 100 National SMS/day for 28 days',
   },
 ];
+const width = Dimensions.get('window').width;
 
 class BestOffers extends Component {
-  _renderItem(item) {
+  _renderItem = (item, index) => {
     return (
-      <View style={styles.gridView}>
+      <View
+        contentContainerStyle={{justifyContent: 'flex-start'}}
+        style={styles.gridView}>
         <Button
           style={styles.button}
           compact={true}
           uppercase={false}
           labelStyle={{color: 'orange', fontWeight: '400'}}
           mode="outlined"
-          onPress={() => alert('Pressed')}>
+          onPress={() => alert('Button Pressed')}>
           Select
         </Button>
         <Text style={styles.valueContainer}>{item.value}</Text>
-
         <Text style={styles.validityContainer}>{item.validity}</Text>
         <Text style={styles.descContainer}>{item.desc}</Text>
       </View>
     );
-  }
+  };
 
   render() {
     return (
@@ -45,6 +53,7 @@ class BestOffers extends Component {
         style={{backgroundColor: '#fff'}}
         itemDimension={130}
         horizontal={true}
+        spacing={20}
         renderItem={(item) => this._renderItem(item.item)}
         data={data}
       />
@@ -57,10 +66,9 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     borderRadius: 5,
     padding: 10,
-    height: 150,
-    width: Dimensions.get('window').width - 40,
-    margin: 10,
-    backgroundColor: '#fff',
+    height: 160,
+    width: width - 40,
+    borderBottomColor: '#a5a9ab',
   },
   valueContainer: {
     fontSize: 20,
@@ -69,7 +77,7 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   validityContainer: {
-    marginTop: 20,
+    marginTop: 45,
     fontSize: 12,
     color: '#697073',
   },
@@ -79,10 +87,10 @@ const styles = StyleSheet.create({
     color: '#a5a9ab',
   },
   button: {
-    borderColor: 'orange',
+    borderColor: '#E38534',
     width: 95,
     position: 'absolute',
-    marginLeft: 170,
+    marginLeft: width - 160,
     marginTop: 5,
     borderRadius: 20,
   },
